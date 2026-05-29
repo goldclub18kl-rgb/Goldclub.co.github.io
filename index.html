@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Goldclub — Accesorios en Oro Laminado</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --gold:#C9A84C;--gold-light:#E8C96A;--gold-dark:#8B6914;
+  --cream:#FAF6EF;--charcoal:#1A1814;--warm-gray:#6B6460;
+  --border:rgba(201,168,76,0.25);
+  --admin-bg:#0D0C0A;--admin-panel:#161410;--admin-card:#1E1B16;
+  --red:#E05555;--green:#55C98A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--charcoal);color:var(--cream);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.35}
+
+/* ─── HEADER ─── */
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.5rem 4rem;background:linear-gradient(to bottom,rgba(26,24,20,.95),transparent);backdrop-filter:blur(2px)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;text-decoration:none}
+.logo span{color:var(--cream);font-style:italic}
+nav{display:flex;gap:2.5rem;align-items:center}
+nav a{color:var(--cream);text-decoration:none;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75;transition:opacity .3s,color .3s}
+nav a:hover{opacity:1;color:var(--gold-light)}
+.nav-cta{border:1px solid var(--gold);padding:.55rem 1.4rem;color:var(--gold)!important;opacity:1!important;transition:background .3s,color .3s!important}
+.nav-cta:hover{background:var(--gold)!important;color:var(--charcoal)!important}
+.admin-btn{background:none;border:1px solid rgba(201,168,76,.3);color:rgba(250,246,239,.4);font-family:'Montserrat',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:.5rem 1rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:.5rem}
+.admin-btn:hover{border-color:var(--gold);color:var(--gold)}
+.admin-btn .dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:none}
+.admin-btn .dot.active{display:block}
+
+/* ─── HERO ─── */
+.hero{height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;text-align:center}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 60%,rgba(201,168,76,.12) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 20% 20%,rgba(201,168,76,.06) 0%,transparent 60%),linear-gradient(160deg,#1A1814 0%,#23201A 50%,#1A1814 100%)}
+.ring{position:absolute;border:1px solid var(--border);border-radius:50%;animation:rotate-slow linear infinite}
+.ring-1{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:40s}
+.ring-2{width:820px;height:820px;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:60s;animation-direction:reverse}
+.ring-3{width:1050px;height:1050px;top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:90s}
+@keyframes rotate-slow{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+.hero-content{position:relative;z-index:2;animation:fade-up 1.2s ease both}
+@keyframes fade-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{font-size:.65rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:300;line-height:1.05;letter-spacing:.05em;margin-bottom:1.5rem}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-subtitle{font-size:.8rem;letter-spacing:.18em;color:rgba(250,246,239,.55);max-width:400px;margin:0 auto 3rem;line-height:2}
+.btn-primary{display:inline-block;background:var(--gold);color:var(--charcoal);text-decoration:none;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;padding:1rem 2.8rem;font-weight:600;transition:background .3s,transform .3s;border:none;cursor:pointer;font-family:'Montserrat',sans-serif}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-secondary{display:inline-block;border:1px solid rgba(250,246,239,.25);color:var(--cream);text-decoration:none;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;padding:1rem 2.8rem;margin-left:1rem;font-weight:400;transition:border-color .3s,color .3s}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.scroll-indicator{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:.4;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;animation:fade-up 1.2s .8s ease both}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scroll-line 2s ease-in-out infinite}
+@keyframes scroll-line{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.15)}}
+
+/* ─── SECTIONS ─── */
+section{padding:7rem 4rem}
+.section-label{font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.15;margin-bottom:1.5rem}
+.section-title em{font-style:italic;color:var(--gold)}
+.divider{width:60px;height:1px;background:var(--gold);margin:2rem 0}
+
+/* ─── STATS ─── */
+.about-strip{background:linear-gradient(135deg,#211F1A,#1A1814);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem;display:grid;grid-template-columns:repeat(3,1fr)}
+.about-stat{text-align:center;padding:2rem;border-right:1px solid var(--border)}
+.about-stat:last-child{border-right:none}
+.stat-number{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:.5rem}
+.stat-label{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(250,246,239,.5)}
+
+/* ─── CATALOG ─── */
+#catalogo{background:#1A1814}
+.catalog-header{max-width:550px;margin-bottom:4rem}
+.filter-bar{display:flex;gap:.75rem;margin-bottom:3rem;flex-wrap:wrap}
+.filter-pill{background:transparent;border:1px solid var(--border);color:rgba(250,246,239,.55);font-family:'Montserrat',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;padding:.55rem 1.3rem;cursor:pointer;transition:all .3s}
+.filter-pill:hover,.filter-pill.active{background:var(--gold);border-color:var(--gold);color:var(--charcoal)}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px}
+.product-card{background:#211F1A;border:1px solid var(--border);overflow:hidden;transition:transform .4s,box-shadow .4s;cursor:pointer;animation:fade-up .6s ease both}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 1px rgba(201,168,76,.35)}
+.product-card.hidden{display:none}
+
+/* Product image — now supports real photos */
+.product-image{width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,#2A2720,#1E1C17);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.product-image img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .5s ease}
+.product-card:hover .product-image img{transform:scale(1.04)}
+.product-image-icon{font-size:4rem;opacity:.2;position:relative;z-index:1}
+.product-image::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 30%,rgba(201,168,76,.08),transparent 70%);pointer-events:none;z-index:2}
+.product-badge{position:absolute;top:1rem;right:1rem;background:var(--gold);color:var(--charcoal);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;padding:.3rem .7rem;z-index:3}
+.product-info{padding:1.75rem}
+.product-category{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.product-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;line-height:1.2;margin-bottom:.5rem;color:var(--cream)}
+
+/* ★ Star rating on card */
+.card-stars{display:flex;align-items:center;gap:.35rem;margin-bottom:.9rem}
+.card-stars-display{display:flex;gap:2px}
+.card-star{font-size:.85rem;color:rgba(201,168,76,.25);transition:color .2s}
+.card-star.filled{color:var(--gold)}
+.card-rating-text{font-size:.6rem;color:rgba(250,246,239,.35);letter-spacing:.05em}
+
+.product-features{list-style:none;margin-bottom:1.5rem}
+.product-features li{font-size:.68rem;color:rgba(250,246,239,.55);line-height:1.8;padding-left:1rem;position:relative}
+.product-features li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:.6rem}
+.product-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:1.25rem}
+.product-price{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--gold-light)}
+.product-price span{font-family:'Montserrat',sans-serif;font-size:.65rem;color:rgba(250,246,239,.4);display:block;line-height:1;margin-bottom:.15rem}
+.btn-card{background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:.6rem 1.2rem;cursor:pointer;transition:all .3s}
+.btn-card:hover{background:var(--gold);color:var(--charcoal)}
+
+/* ─── PRODUCT MODAL ─── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity .4s;backdrop-filter:blur(8px)}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:#211F1A;border:1px solid var(--gold);max-width:720px;width:100%;max-height:90vh;overflow-y:auto;transform:translateY(30px);transition:transform .4s;position:relative}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:1px solid var(--border);color:var(--cream);width:36px;height:36px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:border-color .3s,color .3s;z-index:10}
+.modal-close:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Modal image — real photo support */
+.modal-image-wrap{width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#2A2720,#1E1C17);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.modal-image-wrap img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.modal-image-icon{font-size:5rem;opacity:.2;position:relative;z-index:1}
+
+.modal-body{padding:2.5rem}
+.modal-category{font-size:.58rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;margin-bottom:1rem}
+.modal-desc{font-size:.78rem;line-height:2;color:rgba(250,246,239,.65);margin-bottom:1.75rem}
+.modal-specs{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+.spec-item{background:rgba(201,168,76,.06);border:1px solid var(--border);padding:1rem 1.25rem}
+.spec-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+.spec-value{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--cream)}
+
+/* ★ Star rating section in modal */
+.modal-rating-section{border:1px solid var(--border);background:rgba(201,168,76,.03);padding:1.5rem 1.75rem;margin-bottom:2rem}
+.modal-rating-title{font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.modal-rating-summary{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.25rem}
+.modal-avg-score{font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--gold-light);line-height:1;font-weight:300}
+.modal-avg-detail{}
+.modal-avg-stars{display:flex;gap:3px;margin-bottom:.3rem}
+.modal-avg-star{font-size:1.1rem;color:rgba(201,168,76,.25)}
+.modal-avg-star.filled{color:var(--gold)}
+.modal-avg-star.half{position:relative;color:rgba(201,168,76,.25)}
+.modal-avg-star.half::before{content:'★';position:absolute;left:0;color:var(--gold);width:50%;overflow:hidden}
+.modal-votes{font-size:.62rem;color:rgba(250,246,239,.35);letter-spacing:.08em}
+.modal-rate-prompt{font-size:.65rem;color:rgba(250,246,239,.5);margin-bottom:.6rem;letter-spacing:.05em}
+.modal-interactive-stars{display:flex;gap:4px;cursor:pointer}
+.modal-istar{font-size:1.6rem;color:rgba(201,168,76,.2);transition:color .15s,transform .15s;user-select:none}
+.modal-istar:hover,.modal-istar.hovered,.modal-istar.selected{color:var(--gold);transform:scale(1.15)}
+.modal-rate-feedback{font-size:.62rem;color:var(--green);margin-top:.6rem;min-height:1rem;letter-spacing:.05em;opacity:0;transition:opacity .4s}
+.modal-rate-feedback.show{opacity:1}
+
+.modal-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:1.75rem;gap:1rem}
+.modal-price{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:var(--gold-light);font-weight:300}
+.modal-price small{font-family:'Montserrat',sans-serif;font-size:.65rem;color:rgba(250,246,239,.4);display:block}
+
+/* ─── NOSOTROS ─── */
+#nosotros{background:#1E1C17}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.why-features{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}
+.why-feature{padding:1.75rem;border:1px solid var(--border);background:rgba(201,168,76,.03);transition:border-color .3s,background .3s}
+.why-feature:hover{border-color:var(--gold);background:rgba(201,168,76,.07)}
+.why-icon{font-size:1.5rem;margin-bottom:1rem}
+.why-feature h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;margin-bottom:.5rem}
+.why-feature p{font-size:.7rem;line-height:1.9;color:rgba(250,246,239,.5)}
+.why-visual{position:relative;height:500px}
+.why-visual-box{position:absolute;border:1px solid var(--border);background:linear-gradient(135deg,#2A2720,#1E1C17)}
+.why-visual-box:nth-child(1){width:280px;height:380px;top:0;right:0;background:radial-gradient(ellipse at 40% 40%,rgba(201,168,76,.12),transparent)}
+.why-visual-box:nth-child(2){width:200px;height:260px;bottom:0;left:20px;background:radial-gradient(ellipse at 60% 60%,rgba(201,168,76,.08),transparent)}
+.why-visual-box:nth-child(3){width:100px;height:100px;top:60px;left:60px;background:var(--gold);opacity:.15}
+
+/* ─── CONTACTO ─── */
+#contacto{background:var(--charcoal)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:6rem;align-items:start}
+.contact-info{margin-top:3rem}
+.contact-item{display:flex;gap:1.25rem;margin-bottom:2.5rem;align-items:flex-start}
+.contact-icon{width:42px;height:42px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;color:var(--gold)}
+.contact-item-label{font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem}
+.contact-item-value{font-size:.8rem;color:rgba(250,246,239,.7);line-height:1.7}
+.contact-form{display:flex;flex-direction:column;gap:1.25rem}
+.form-group{display:flex;flex-direction:column;gap:.5rem}
+.form-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.5)}
+.form-input,.form-textarea,.form-select{background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--cream);font-family:'Montserrat',sans-serif;font-size:.78rem;padding:.9rem 1.1rem;outline:none;transition:border-color .3s,background .3s;appearance:none}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--gold);background:rgba(201,168,76,.05)}
+.form-textarea{resize:vertical;min-height:130px}
+.form-select option{background:#211F1A}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.form-submit{background:var(--gold);color:var(--charcoal);border:none;font-family:'Montserrat',sans-serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;font-weight:600;padding:1rem 2.5rem;cursor:pointer;align-self:flex-start;transition:background .3s,transform .2s}
+.form-submit:hover{background:var(--gold-light);transform:translateY(-2px)}
+.form-success{display:none;background:rgba(201,168,76,.1);border:1px solid var(--gold);padding:1.5rem;font-size:.78rem;color:var(--gold-light);letter-spacing:.05em}
+
+/* ─── FOOTER ─── */
+footer{background:#0F0E0B;border-top:1px solid var(--border);padding:3rem 4rem;display:flex;align-items:center;justify-content:space-between}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+.footer-text{font-size:.65rem;color:rgba(250,246,239,.3);letter-spacing:.1em}
+.footer-socials{display:flex;gap:1rem}
+.footer-social{width:36px;height:36px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:rgba(250,246,239,.5);text-decoration:none;font-size:.75rem;transition:border-color .3s,color .3s}
+.footer-social:hover{border-color:var(--gold);color:var(--gold)}
+.whatsapp-float{position:fixed;bottom:2.5rem;right:2rem;z-index:300;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .3s,box-shadow .3s}
+.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,.6)}
+
+/* ════ ADMIN LOGIN ════ */
+.login-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:800;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .4s;backdrop-filter:blur(12px)}
+.login-overlay.open{opacity:1;pointer-events:all}
+.login-box{background:var(--admin-panel);border:1px solid var(--gold);padding:3rem;width:420px;max-width:95vw;position:relative;animation:fade-up .4s ease both}
+.login-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:.4rem}
+.login-sub{text-align:center;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(250,246,239,.3);margin-bottom:2.5rem}
+.login-field{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.25rem}
+.login-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.45)}
+.login-input{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);color:var(--cream);font-family:'Montserrat',sans-serif;font-size:.82rem;padding:.85rem 1rem;outline:none;transition:border-color .3s}
+.login-input:focus{border-color:var(--gold)}
+.login-btn{width:100%;background:var(--gold);color:var(--charcoal);border:none;font-family:'Montserrat',sans-serif;font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;font-weight:600;padding:1rem;cursor:pointer;margin-top:.5rem;transition:background .3s}
+.login-btn:hover{background:var(--gold-light)}
+.login-error{background:rgba(224,85,85,.1);border:1px solid rgba(224,85,85,.4);color:#E08888;font-size:.7rem;padding:.75rem 1rem;margin-top:.75rem;display:none;text-align:center;letter-spacing:.05em}
+.login-close{position:absolute;top:1rem;right:1rem;background:none;border:1px solid var(--border);color:rgba(250,246,239,.4);width:32px;height:32px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.login-close:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ════ ADMIN PANEL ════ */
+.admin-panel-overlay{position:fixed;inset:0;background:var(--admin-bg);z-index:900;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .4s;transform:translateY(20px)}
+.admin-panel-overlay.open{opacity:1;pointer-events:all;transform:translateY(0)}
+.admin-topbar{background:var(--admin-panel);border-bottom:1px solid rgba(201,168,76,.15);padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.admin-topbar-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+.admin-topbar-logo span{font-size:.6rem;letter-spacing:.2em;color:rgba(250,246,239,.35);display:block;font-family:'Montserrat',sans-serif;margin-top:.1rem}
+.admin-topbar-right{display:flex;align-items:center;gap:1rem}
+.admin-user{font-size:.65rem;letter-spacing:.15em;color:rgba(250,246,239,.45);text-transform:uppercase}
+.admin-logout{background:none;border:1px solid rgba(224,85,85,.3);color:rgba(224,85,85,.6);font-family:'Montserrat',sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:.45rem .9rem;cursor:pointer;transition:all .3s}
+.admin-logout:hover{border-color:var(--red);color:var(--red)}
+.admin-body{max-width:1300px;margin:0 auto;padding:3rem 2.5rem}
+.admin-tabs{display:flex;gap:0;border-bottom:1px solid rgba(201,168,76,.15);margin-bottom:3rem}
+.admin-tab{background:none;border:none;border-bottom:2px solid transparent;color:rgba(250,246,239,.4);font-family:'Montserrat',sans-serif;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;padding:.85rem 1.75rem;cursor:pointer;transition:all .3s;margin-bottom:-1px}
+.admin-tab:hover{color:var(--cream)}
+.admin-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.admin-section{display:none}
+.admin-section.active{display:block}
+.admin-section-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:.5rem}
+.admin-section-sub{font-size:.68rem;color:rgba(250,246,239,.4);margin-bottom:2.5rem;letter-spacing:.05em}
+.admin-add-btn{background:none;border:1px solid var(--gold);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.65rem 1.4rem;cursor:pointer;transition:all .3s;margin-bottom:2.5rem;display:flex;align-items:center;gap:.5rem}
+.admin-add-btn:hover{background:var(--gold);color:var(--charcoal)}
+.admin-product-list{display:flex;flex-direction:column;gap:1.5px}
+
+/* Product row — with photo thumb */
+.admin-product-row{background:var(--admin-card);border:1px solid rgba(201,168,76,.1);display:grid;grid-template-columns:70px 1fr auto auto 120px 160px;align-items:center;gap:1.5rem;padding:1rem 1.5rem;transition:border-color .3s}
+.admin-product-row:hover{border-color:rgba(201,168,76,.3)}
+.admin-row-thumb{width:60px;height:60px;border-radius:0;border:1px solid rgba(201,168,76,.15);overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2A2720,#1E1C17);flex-shrink:0;font-size:1.5rem}
+.admin-row-thumb img{width:100%;height:100%;object-fit:cover}
+.admin-row-info{}
+.admin-row-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--cream);margin-bottom:.2rem}
+.admin-row-cat{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:.7}
+.admin-row-badge{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.25);color:var(--gold);font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;padding:.2rem .6rem}
+.admin-row-price{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold-light)}
+.admin-row-actions{display:flex;gap:.5rem}
+.admin-edit-btn,.admin-delete-btn{background:none;font-family:'Montserrat',sans-serif;font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;padding:.5rem .9rem;cursor:pointer;transition:all .3s;border:1px solid}
+.admin-edit-btn{border-color:rgba(201,168,76,.3);color:rgba(201,168,76,.7)}
+.admin-edit-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.07)}
+.admin-delete-btn{border-color:rgba(224,85,85,.25);color:rgba(224,85,85,.5)}
+.admin-delete-btn:hover{border-color:var(--red);color:var(--red);background:rgba(224,85,85,.07)}
+
+/* Admin cards / info */
+.admin-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.admin-card{background:var(--admin-card);border:1px solid rgba(201,168,76,.1);padding:2rem}
+.admin-card-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:1.75rem;color:var(--gold-light);display:flex;align-items:center;gap:.6rem}
+.admin-card-title span{font-size:.85rem}
+.admin-field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.25rem}
+.admin-input{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);color:var(--cream);font-family:'Montserrat',sans-serif;font-size:.78rem;padding:.8rem .95rem;outline:none;transition:border-color .3s;width:100%}
+.admin-input:focus{border-color:var(--gold);background:rgba(201,168,76,.04)}
+.admin-save-btn{background:var(--gold);color:var(--charcoal);border:none;font-family:'Montserrat',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;padding:.8rem 1.8rem;cursor:pointer;margin-top:.5rem;transition:background .3s}
+.admin-save-btn:hover{background:var(--gold-light)}
+.admin-saved-msg{font-size:.65rem;color:var(--green);letter-spacing:.1em;margin-left:1rem;opacity:0;transition:opacity .5s}
+.admin-texts-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+.admin-textarea{background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);color:var(--cream);font-family:'Montserrat',sans-serif;font-size:.78rem;padding:.8rem .95rem;outline:none;transition:border-color .3s;width:100%;resize:vertical;min-height:80px}
+.admin-textarea:focus{border-color:var(--gold);background:rgba(201,168,76,.04)}
+
+/* ════ EDIT PRODUCT MODAL ════ */
+.edit-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px)}
+.edit-overlay.open{opacity:1;pointer-events:all}
+.edit-modal{background:var(--admin-panel);border:1px solid var(--gold);max-width:740px;width:100%;max-height:90vh;overflow-y:auto;position:relative;transform:translateY(20px);transition:transform .3s}
+.edit-overlay.open .edit-modal{transform:translateY(0)}
+.edit-header{padding:2rem 2rem 1.5rem;border-bottom:1px solid rgba(201,168,76,.15);display:flex;align-items:center;justify-content:space-between}
+.edit-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--gold-light)}
+.edit-close{background:none;border:1px solid var(--border);color:rgba(250,246,239,.4);width:34px;height:34px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.edit-close:hover{border-color:var(--gold);color:var(--gold)}
+.edit-body{padding:2rem}
+.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.25rem}
+.edit-field{display:flex;flex-direction:column;gap:.4rem}
+.edit-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4)}
+.edit-input,.edit-select,.edit-textarea{background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);color:var(--cream);font-family:'Montserrat',sans-serif;font-size:.8rem;padding:.8rem .95rem;outline:none;transition:border-color .3s;width:100%}
+.edit-input:focus,.edit-select:focus,.edit-textarea:focus{border-color:var(--gold)}
+.edit-textarea{resize:vertical;min-height:90px}
+.edit-select option{background:#211F1A}
+
+/* Photo upload in edit modal */
+.photo-upload-area{border:2px dashed rgba(201,168,76,.25);padding:1.5rem;text-align:center;cursor:pointer;transition:border-color .3s,background .3s;position:relative;background:rgba(255,255,255,.02)}
+.photo-upload-area:hover{border-color:var(--gold);background:rgba(201,168,76,.04)}
+.photo-upload-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.photo-preview{width:100%;max-height:200px;object-fit:cover;display:none;margin-top:1rem;border:1px solid rgba(201,168,76,.2)}
+.photo-upload-icon{font-size:2rem;margin-bottom:.5rem;opacity:.4}
+.photo-upload-text{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,246,239,.35)}
+.photo-upload-hint{font-size:.58rem;color:rgba(250,246,239,.2);margin-top:.3rem}
+.photo-remove-btn{background:none;border:1px solid rgba(224,85,85,.3);color:rgba(224,85,85,.6);font-family:'Montserrat',sans-serif;font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .75rem;cursor:pointer;margin-top:.5rem;display:none;transition:all .3s}
+.photo-remove-btn:hover{border-color:var(--red);color:var(--red)}
+
+.edit-specs-title{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:1.5rem 0 1rem}
+.edit-spec-row{display:grid;grid-template-columns:1fr 1.5fr auto;gap:.75rem;margin-bottom:.75rem;align-items:center}
+.edit-spec-del{background:none;border:1px solid rgba(224,85,85,.3);color:rgba(224,85,85,.5);width:34px;height:34px;cursor:pointer;font-size:.85rem;transition:all .3s;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.edit-spec-del:hover{border-color:var(--red);color:var(--red)}
+.edit-add-spec{background:none;border:1px dashed rgba(201,168,76,.3);color:rgba(201,168,76,.5);font-family:'Montserrat',sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;padding:.55rem 1rem;cursor:pointer;transition:all .3s;margin-top:.25rem}
+.edit-add-spec:hover{border-color:var(--gold);color:var(--gold)}
+.edit-footer{padding:1.5rem 2rem;border-top:1px solid rgba(201,168,76,.15);display:flex;align-items:center;gap:1rem;justify-content:flex-end}
+.edit-cancel{background:none;border:1px solid var(--border);color:rgba(250,246,239,.5);font-family:'Montserrat',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;padding:.7rem 1.4rem;cursor:pointer;transition:all .3s}
+.edit-cancel:hover{border-color:var(--cream);color:var(--cream)}
+.edit-save{background:var(--gold);color:var(--charcoal);border:none;font-family:'Montserrat',sans-serif;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;padding:.7rem 1.8rem;cursor:pointer;transition:background .3s}
+.edit-save:hover{background:var(--gold-light)}
+
+/* ════ CONFIRM DELETE ════ */
+.confirm-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1100;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(8px)}
+.confirm-overlay.open{opacity:1;pointer-events:all}
+.confirm-box{background:var(--admin-panel);border:1px solid rgba(224,85,85,.4);padding:2.5rem;max-width:400px;width:100%;text-align:center}
+.confirm-icon{font-size:2.5rem;margin-bottom:1rem}
+.confirm-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:.75rem}
+.confirm-text{font-size:.72rem;color:rgba(250,246,239,.5);line-height:1.9;margin-bottom:2rem}
+.confirm-actions{display:flex;gap:1rem;justify-content:center}
+.confirm-cancel{background:none;border:1px solid var(--border);color:rgba(250,246,239,.5);font-family:'Montserrat',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;padding:.7rem 1.6rem;cursor:pointer;transition:all .3s}
+.confirm-cancel:hover{border-color:var(--cream);color:var(--cream)}
+.confirm-delete{background:var(--red);color:#fff;border:none;font-family:'Montserrat',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;font-weight:600;padding:.7rem 1.6rem;cursor:pointer;transition:background .3s}
+.confirm-delete:hover{background:#c94444}
+
+/* Toast */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:#211F1A;border:1px solid var(--gold);color:var(--cream);font-size:.7rem;letter-spacing:.1em;padding:.85rem 2rem;z-index:2000;transition:transform .4s,opacity .4s;opacity:0;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+/* Responsive */
+@media(max-width:900px){
+  header{padding:1.25rem 1.5rem}nav{display:none}
+  section{padding:5rem 1.5rem}
+  .about-strip{grid-template-columns:1fr}
+  .about-stat{border-right:none;border-bottom:1px solid var(--border)}
+  .why-grid,.contact-grid{grid-template-columns:1fr;gap:3rem}
+  .why-visual{display:none}.why-features{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:1.5rem;text-align:center}
+  .modal-specs{grid-template-columns:1fr}
+  .admin-info-grid{grid-template-columns:1fr}
+  .admin-product-row{grid-template-columns:60px 1fr auto;gap:.75rem}
+  .admin-row-badge,.admin-row-price{display:none}
+  .edit-grid{grid-template-columns:1fr}
+  .admin-body{padding:2rem 1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <a href="#inicio" class="logo">Gold<span>club</span></a>
+  <nav>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#contacto" class="nav-cta">Cotización</a>
+    <button class="admin-btn" onclick="openLogin()" id="adminNavBtn">
+      <span class="dot" id="adminDot"></span>⚙ Admin
+    </button>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="inicio">
+  <div class="hero-bg">
+    <div class="ring ring-1"></div><div class="ring ring-2"></div><div class="ring ring-3"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Joyería de Oro Laminado · Hecho con Amor</p>
+    <h1 class="hero-title">El brillo del oro,<br><em>en cada detalle</em></h1>
+    <p class="hero-subtitle" id="heroSubtitle">Manillas, collares y accesorios elaborados a mano con oro laminado de alta calidad</p>
+    <a href="#catalogo" class="btn-primary">Ver Catálogo</a>
+    <a href="#contacto" class="btn-secondary">Contactar</a>
+  </div>
+  <div class="scroll-indicator"><div class="scroll-line"></div>Desplaza</div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<div class="about-strip">
+  <div class="about-stat"><div class="stat-number" id="stat1">500+</div><div class="stat-label" id="statLabel1">Clientes Satisfechos</div></div>
+  <div class="about-stat"><div class="stat-number" id="stat2">50+</div><div class="stat-label" id="statLabel2">Diseños Únicos</div></div>
+  <div class="about-stat"><div class="stat-number" id="stat3">5★</div><div class="stat-label" id="statLabel3">Calidad Garantizada</div></div>
+</div>
+
+<!-- ═══ CATÁLOGO ═══ -->
+<section id="catalogo">
+  <div class="catalog-header">
+    <p class="section-label">Nuestros Productos</p>
+    <h2 class="section-title">Catálogo de <em>Manillas</em></h2>
+    <div class="divider"></div>
+    <p style="font-size:.78rem;color:rgba(250,246,239,.55);line-height:2;" id="catalogDesc">Cada pieza es elaborada con capas de oro laminado de alta pureza, garantizando durabilidad y un acabado impecable.</p>
+  </div>
+  <div class="filter-bar">
+    <button class="filter-pill active" onclick="filterProducts('todas',this)">Todas</button>
+    <button class="filter-pill" onclick="filterProducts('clasica',this)">Clásicas</button>
+    <button class="filter-pill" onclick="filterProducts('moderna',this)">Modernas</button>
+    <button class="filter-pill" onclick="filterProducts('personalizada',this)">Personalizadas</button>
+    <button class="filter-pill" onclick="filterProducts('pareja',this)">Para Parejas</button>
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+</section>
+
+<!-- ═══ NOSOTROS ═══ -->
+<section id="nosotros">
+  <div class="why-grid">
+    <div>
+      <p class="section-label">¿Por Qué Goldclub?</p>
+      <h2 class="section-title">Calidad que <em>se siente</em></h2>
+      <div class="divider"></div>
+      <p style="font-size:.78rem;color:rgba(250,246,239,.55);line-height:2.1;max-width:440px;" id="aboutText">En Goldclub creemos que el lujo debe ser accesible. Usamos las mejores técnicas de laminado para que cada accesorio tenga la elegancia del oro sin el precio del oro macizo.</p>
+      <div class="why-features">
+        <div class="why-feature"><div class="why-icon">✦</div><h4>Oro 18K Real</h4><p>Laminado con capas de entre 3 y 6 micras de oro 18 quilates.</p></div>
+        <div class="why-feature"><div class="why-icon">🛡️</div><h4>Duradera</h4><p>Base de acero inoxidable 316L antialérgico y resistente.</p></div>
+        <div class="why-feature"><div class="why-icon">📦</div><h4>Envíos</h4><p>Despachamos a todo Medellín </p></div>
+        <div class="why-feature"><div class="why-icon">🔄</div><h4>Garantía</h4><p>30 días de garantía por defectos de fabricación.</p></div>
+      </div>
+    </div>
+    <div class="why-visual"><div class="why-visual-box"></div><div class="why-visual-box"></div><div class="why-visual-box"></div></div>
+  </div>
+</section>
+
+<!-- ═══ CONTACTO ═══ -->
+<section id="contacto">
+  <div class="contact-grid">
+    <div>
+      <p class="section-label">Hablemos</p>
+      <h2 class="section-title">Contacta a <em>Goldclub</em></h2>
+      <div class="divider"></div>
+      <p style="font-size:.78rem;color:rgba(250,246,239,.55);line-height:2;max-width:350px;">¿Preguntas, personalización o pedido al por mayor? Escríbenos.</p>
+      <div class="contact-info">
+        <div class="contact-item"><div class="contact-icon">📱</div><div><p class="contact-item-label">WhatsApp</p><p class="contact-item-value" id="displayPhone">+57 300 000 0000</p></div></div>
+        <div class="contact-item"><div class="contact-icon">📧</div><div><p class="contact-item-label">Correo</p><p class="contact-item-value" id="displayEmail">hola@goldclub.co</p></div></div>
+        <div class="contact-item"><div class="contact-icon">📍</div><div><p class="contact-item-label">Ciudad</p><p class="contact-item-value" id="displayCity">Itagüí, Antioquia<br>Colombia</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">Nombre</label><input class="form-input" type="text" placeholder="Tu nombre" id="fNombre"/></div>
+          <div class="form-group"><label class="form-label">WhatsApp</label><input class="form-input" type="tel" placeholder="+57 300..." id="fTel"/></div>
+        </div>
+        <div class="form-group"><label class="form-label">Correo</label><input class="form-input" type="email" placeholder="tu@correo.com" id="fEmail"/></div>
+        <div class="form-group"><label class="form-label">Producto de interés</label>
+          <select class="form-select" id="fProducto"><option value="">— Selecciona —</option></select>
+        </div>
+        <div class="form-group"><label class="form-label">Mensaje</label><textarea class="form-textarea" placeholder="Cuéntanos qué necesitas..." id="fMensaje"></textarea></div>
+        <button class="form-submit" onclick="sendWhatsApp()">Enviar por WhatsApp →</button>
+        <div class="form-success" id="formSuccess">✓ Redirigiendo a WhatsApp...</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-logo">Goldclub</div>
+  <p class="footer-text">© 2026 Goldclub · Accesorios en Oro Laminado · Colombia</p>
+  <div class="footer-socials">
+    <a href="#" class="footer-social" id="igLink">ig</a>
+    <a href="#" class="footer-social" id="fbLink">fb</a>
+    <a href="#" class="footer-social" id="tkLink">tk</a>
+  </div>
+</footer>
+<a href="#" class="whatsapp-float" id="waFloat" title="Escríbenos">💬</a>
+
+<!-- ═══ PRODUCT DETAIL MODAL ═══ -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-image-wrap" id="modalImageWrap">
+      <span class="modal-image-icon" id="modalImageIcon"></span>
+    </div>
+    <div class="modal-body">
+      <p class="modal-category" id="modalCat"></p>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-specs" id="modalSpecs"></div>
+
+      <!-- ★ RATING SECTION ★ -->
+      <div class="modal-rating-section">
+        <div class="modal-rating-title">Calificación de clientes</div>
+        <div class="modal-rating-summary">
+          <div class="modal-avg-score" id="modalAvgScore">—</div>
+          <div class="modal-avg-detail">
+            <div class="modal-avg-stars" id="modalAvgStars"></div>
+            <div class="modal-votes" id="modalVotes">Sin calificaciones aún</div>
+          </div>
+        </div>
+        <div class="modal-rate-prompt">¿Ya tienes esta pieza? Deja tu calificación:</div>
+        <div class="modal-interactive-stars" id="modalIStars">
+          <span class="modal-istar" data-v="1">★</span>
+          <span class="modal-istar" data-v="2">★</span>
+          <span class="modal-istar" data-v="3">★</span>
+          <span class="modal-istar" data-v="4">★</span>
+          <span class="modal-istar" data-v="5">★</span>
+        </div>
+        <div class="modal-rate-feedback" id="rateFeedback"></div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="modal-price"><small>Precio</small><span id="modalPrice"></span></div>
+        <button class="btn-primary" onclick="pedirProducto()" style="border:none;cursor:pointer;">Pedir por WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ADMIN LOGIN ═══ -->
+<div class="login-overlay" id="loginOverlay">
+  <div class="login-box">
+    <button class="login-close" onclick="closeLogin()">✕</button>
+    <div class="login-logo">Gold<span style="font-style:italic;color:var(--cream)">club</span></div>
+    <div class="login-sub">Panel de Administración</div>
+    <div class="login-field">
+      <label class="login-label">Usuario</label>
+      <input class="login-input" type="text" id="loginUser" placeholder="Usuario" autocomplete="username"/>
+    </div>
+    <div class="login-field">
+      <label class="login-label">Contraseña</label>
+      <input class="login-input" type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"/>
+    </div>
+    <button class="login-btn" onclick="doLogin()">Ingresar →</button>
+    <div class="login-error" id="loginError">Usuario o contraseña incorrectos</div>
+  </div>
+</div>
+
+<!-- ═══ ADMIN PANEL ═══ -->
+<div class="admin-panel-overlay" id="adminPanel">
+  <div class="admin-topbar">
+    <div class="admin-topbar-logo">Goldclub <span>Panel de Administración</span></div>
+    <div class="admin-topbar-right">
+      <span class="admin-user" id="adminUserLabel">admin</span>
+      <button class="admin-logout" onclick="doLogout()">Cerrar Sesión</button>
+    </div>
+  </div>
+  <div class="admin-body">
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="switchTab('productos',this)">Productos</button>
+      <button class="admin-tab" onclick="switchTab('contacto',this)">Contacto e Info</button>
+      <button class="admin-tab" onclick="switchTab('textos',this)">Textos del Sitio</button>
+      <button class="admin-tab" onclick="switchTab('acceso',this)">Acceso Admin</button>
+    </div>
+
+    <!-- TAB PRODUCTOS -->
+    <div class="admin-section active" id="tab-productos">
+      <div class="admin-section-title">Gestión de Productos</div>
+      <div class="admin-section-sub">Edita precios, fotos y características. Los cambios se reflejan al instante en el catálogo.</div>
+      <button class="admin-add-btn" onclick="openEditModal(null)">＋ Agregar nuevo producto</button>
+      <div id="adminProductList"></div>
+    </div>
+
+    <!-- TAB CONTACTO -->
+    <div class="admin-section" id="tab-contacto">
+      <div class="admin-section-title">Contacto e Información</div>
+      <div class="admin-section-sub">Esta información aparece en la sección de contacto y en los botones de WhatsApp.</div>
+      <div class="admin-info-grid">
+        <div class="admin-card">
+          <div class="admin-card-title"><span>📱</span> WhatsApp y Teléfono</div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Número WhatsApp (con código de país, sin +)</label><input class="admin-input" id="cfPhone" placeholder="573001234567" type="tel"/></div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Texto visible en la página</label><input class="admin-input" id="cfPhoneDisplay" placeholder="+57 300 123 4567"/></div>
+          <button class="admin-save-btn" onclick="saveContact()">Guardar</button>
+          <span class="admin-saved-msg" id="contactSavedMsg">✓ Guardado</span>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span>📧</span> Correo y Ciudad</div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Correo electrónico</label><input class="admin-input" id="cfEmail" placeholder="hola@goldclub.co" type="email"/></div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Ciudad / Ubicación</label><input class="admin-input" id="cfCity" placeholder="Itagüí, Antioquia · Colombia"/></div>
+          <button class="admin-save-btn" onclick="saveContact()">Guardar</button>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span>📲</span> Redes Sociales</div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Instagram (URL)</label><input class="admin-input" id="cfIg" placeholder="https://instagram.com/goldclub"/></div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Facebook (URL)</label><input class="admin-input" id="cfFb" placeholder="https://facebook.com/goldclub"/></div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">TikTok (URL)</label><input class="admin-input" id="cfTk" placeholder="https://tiktok.com/@goldclub"/></div>
+          <button class="admin-save-btn" onclick="saveContact()">Guardar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB TEXTOS -->
+    <div class="admin-section" id="tab-textos">
+      <div class="admin-section-title">Textos del Sitio</div>
+      <div class="admin-section-sub">Cambia los textos principales que aparecen en la página de inicio.</div>
+      <div class="admin-texts-grid">
+        <div class="admin-card">
+          <div class="admin-card-title"><span>🏠</span> Sección Hero</div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Subtítulo</label><textarea class="admin-textarea" id="tfHeroSub"></textarea></div>
+          <button class="admin-save-btn" onclick="saveTexts()">Guardar</button>
+          <span class="admin-saved-msg" id="textsSavedMsg">✓ Guardado</span>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span>📋</span> Catálogo</div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Descripción bajo el título</label><textarea class="admin-textarea" id="tfCatalogDesc"></textarea></div>
+          <button class="admin-save-btn" onclick="saveTexts()">Guardar</button>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span>⭐</span> Estadísticas</div>
+          <div class="admin-info-grid" style="grid-template-columns:repeat(3,1fr);margin-top:.5rem">
+            <div class="admin-field"><label style="font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,246,239,.35);margin-bottom:.25rem;display:block">Número 1</label><input class="admin-input" id="tfStat1"/></div>
+            <div class="admin-field"><label style="font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,246,239,.35);margin-bottom:.25rem;display:block">Número 2</label><input class="admin-input" id="tfStat2"/></div>
+            <div class="admin-field"><label style="font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,246,239,.35);margin-bottom:.25rem;display:block">Número 3</label><input class="admin-input" id="tfStat3"/></div>
+            <div class="admin-field"><label style="font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,246,239,.35);margin-bottom:.25rem;display:block">Texto 1</label><input class="admin-input" id="tfStatL1"/></div>
+            <div class="admin-field"><label style="font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,246,239,.35);margin-bottom:.25rem;display:block">Texto 2</label><input class="admin-input" id="tfStatL2"/></div>
+            <div class="admin-field"><label style="font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(250,246,239,.35);margin-bottom:.25rem;display:block">Texto 3</label><input class="admin-input" id="tfStatL3"/></div>
+          </div>
+          <button class="admin-save-btn" style="margin-top:1.25rem" onclick="saveTexts()">Guardar</button>
+        </div>
+        <div class="admin-card">
+          <div class="admin-card-title"><span>🏢</span> Nosotros</div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Párrafo principal</label><textarea class="admin-textarea" id="tfAbout"></textarea></div>
+          <button class="admin-save-btn" onclick="saveTexts()">Guardar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB ACCESO -->
+    <div class="admin-section" id="tab-acceso">
+      <div class="admin-section-title">Cambiar Credenciales</div>
+      <div class="admin-section-sub">Modifica el usuario y contraseña del panel de administración.</div>
+      <div class="admin-info-grid">
+        <div class="admin-card">
+          <div class="admin-card-title"><span>🔐</span> Credenciales de Acceso</div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Nuevo usuario</label><input class="admin-input" id="newUser" placeholder="admin"/></div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Nueva contraseña</label><input class="admin-input" type="password" id="newPass" placeholder="••••••••"/></div>
+          <div class="admin-field"><label style="font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(250,246,239,.4);margin-bottom:.3rem;display:block">Confirmar contraseña</label><input class="admin-input" type="password" id="newPassConfirm" placeholder="••••••••"/></div>
+          <button class="admin-save-btn" onclick="saveCredentials()">Actualizar Credenciales</button>
+          <span class="admin-saved-msg" id="credSavedMsg">✓ Actualizadas</span>
+          <div style="background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.2);padding:.85rem 1rem;margin-top:1.5rem;font-size:.65rem;color:rgba(224,85,85,.7);line-height:1.8">
+            ⚠ Anota tu nueva contraseña. Si la olvidas no podrás recuperarla sin editar el código.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ EDIT PRODUCT MODAL ═══ -->
+<div class="edit-overlay" id="editOverlay">
+  <div class="edit-modal">
+    <div class="edit-header">
+      <div class="edit-title" id="editModalTitle">Editar Producto</div>
+      <button class="edit-close" onclick="closeEditModal()">✕</button>
+    </div>
+    <div class="edit-body">
+
+      <!-- FOTO DEL PRODUCTO -->
+      <div style="margin-bottom:1.5rem">
+        <div class="edit-label" style="margin-bottom:.6rem">Foto del producto</div>
+        <div class="photo-upload-area" id="photoUploadArea" onclick="document.getElementById('photoFileInput').click()">
+          <input type="file" id="photoFileInput" accept="image/*" style="display:none" onchange="handlePhotoUpload(event)"/>
+          <div id="photoPlaceholder">
+            <div class="photo-upload-icon">📷</div>
+            <div class="photo-upload-text">Haz clic para subir una foto</div>
+            <div class="photo-upload-hint">JPG, PNG o WEBP · Máx 5 MB</div>
+          </div>
+          <img id="photoPreview" class="photo-preview" alt="Vista previa"/>
+        </div>
+        <button class="photo-remove-btn" id="photoRemoveBtn" onclick="removePhoto()">✕ Quitar foto</button>
+      </div>
+
+      <div class="edit-grid">
+        <div class="edit-field"><label class="edit-label">Nombre del producto</label><input class="edit-input" id="eeName" placeholder="Ej: Manilla Elegance"/></div>
+        <div class="edit-field"><label class="edit-label">Categoría</label>
+          <select class="edit-select" id="eeCat">
+            <option value="clasica">Clásica</option>
+            <option value="moderna">Moderna</option>
+            <option value="personalizada">Personalizada</option>
+            <option value="pareja">Para Parejas</option>
+          </select>
+        </div>
+        <div class="edit-field"><label class="edit-label">Precio (ej: $85.000 COP)</label><input class="edit-input" id="eePrice" placeholder="$85.000 COP"/></div>
+        <div class="edit-field"><label class="edit-label">Ícono / Emoji (si no hay foto)</label><input class="edit-input" id="eeIcon" placeholder="💛"/></div>
+        <div class="edit-field"><label class="edit-label">Etiqueta badge (opcional)</label><input class="edit-input" id="eeBadge" placeholder="Más Vendida / Nuevo..."/></div>
+        <div class="edit-field"><label class="edit-label">Texto categoría visible</label><input class="edit-input" id="eeCatLabel" placeholder="Manilla Clásica"/></div>
+      </div>
+      <div class="edit-field" style="margin-bottom:1.25rem"><label class="edit-label">Descripción larga (modal)</label><textarea class="edit-textarea" id="eeDesc"></textarea></div>
+      <div class="edit-field" style="margin-bottom:1.25rem"><label class="edit-label">Características (una por línea, aparecen en la tarjeta)</label><textarea class="edit-textarea" id="eeFeatures" placeholder="Oro laminado 18K — 3 micras&#10;Ancho: 8 mm · Ajustable&#10;Antialérgica, base acero inoxidable"></textarea></div>
+      <div class="edit-specs-title">Especificaciones técnicas (tabla del modal)</div>
+      <div id="editSpecsContainer"></div>
+      <button class="edit-add-spec" onclick="addSpecRow()">＋ Agregar especificación</button>
+    </div>
+    <div class="edit-footer">
+      <button class="edit-cancel" onclick="closeEditModal()">Cancelar</button>
+      <button class="edit-save" onclick="saveProduct()">Guardar Producto</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONFIRM DELETE ═══ -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box">
+    <div class="confirm-icon">🗑️</div>
+    <div class="confirm-title">¿Eliminar producto?</div>
+    <div class="confirm-text">Esta acción no se puede deshacer.<br>El producto se eliminará del catálogo.</div>
+    <div class="confirm-actions">
+      <button class="confirm-cancel" onclick="closeConfirm()">Cancelar</button>
+      <button class="confirm-delete" onclick="confirmDeleteProduct()">Sí, eliminar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════════
+//  STATE & STORAGE
+// ══════════════════════════════════════════
+const STORAGE_KEY = 'goldclub_data_v2';
+
+const defaultProducts = [
+  {id:'p1',cat:'clasica',catLabel:'Manilla Clásica',name:'Manilla Elegance Rígida',icon:'💛',photo:'',badge:'Más Vendida',price:'$85.000 COP',
+   features:['Oro laminado 18K — 3 micras','Ancho: 8 mm · Ajustable','Antialérgica, base acero inoxidable','Resistente al agua y sudor'],
+   desc:'La Elegance Rígida es nuestra pieza insignia. Un diseño atemporal que combina con cualquier look, desde casual hasta formal.',
+   specs:[{l:'Material base',v:'Acero inoxidable 316L'},{l:'Recubrimiento',v:'Oro 18K — 3 micras'},{l:'Ancho',v:'8 mm'},{l:'Cierre',v:'Ajustable abierto'},{l:'Tamaños',v:'S · M · L'},{l:'Empaque',v:'Caja regalo incluida'}],
+   ratings:[]},
+  {id:'p2',cat:'moderna',catLabel:'Manilla Moderna',name:'Manilla Tejida Trenza',icon:'✨',photo:'',badge:'',price:'$110.000 COP',
+   features:['Oro laminado 18K — 5 micras','Diseño trenzado artesanal','Cierre de langosta seguro','Longitud: 19 cm regulable'],
+   desc:'Elaborada con técnica artesanal de trenzado triple. Cada pieza lleva horas de trabajo manual.',
+   specs:[{l:'Material base',v:'Acero inoxidable 316L'},{l:'Recubrimiento',v:'Oro 18K — 5 micras'},{l:'Estilo',v:'Trenzado artesanal'},{l:'Cierre',v:'Mosquetón de langosta'},{l:'Longitud',v:'19 cm'},{l:'Empaque',v:'Bolsa joyería + caja'}],
+   ratings:[]},
+  {id:'p3',cat:'personalizada',catLabel:'Manilla Personalizada',name:'Manilla Nombre Grabado',icon:'🔤',photo:'',badge:'Personalizable',price:'$135.000 COP',
+   features:['Tu nombre o frase especial','Oro laminado 18K — 4 micras','Grabado láser incluido','Ideal para regalo'],
+   desc:'Grabamos el nombre, frase o fecha especial que elijas con tecnología láser de alta precisión.',
+   specs:[{l:'Material base',v:'Acero inoxidable 316L'},{l:'Recubrimiento',v:'Oro 18K — 4 micras'},{l:'Grabado',v:'Láser (hasta 15 caracteres)'},{l:'Tiempo',v:'3–5 días hábiles'},{l:'Ancho',v:'10 mm'},{l:'Empaque',v:'Caja regalo premium'}],
+   ratings:[]},
+  {id:'p4',cat:'pareja',catLabel:'Para Parejas',name:'Set Parejas Love Lock',icon:'💑',photo:'',badge:'Set x2',price:'$195.000 COP',
+   features:['2 manillas coordinadas','Oro laminado 18K — 5 micras','Dije de candado y llave','Empaque especial de regalo'],
+   desc:'Un set de dos manillas coordinadas con dije de candado (ella) y llave (él), simbolizando el vínculo irrompible.',
+   specs:[{l:'Contenido',v:'2 manillas + 2 dijes'},{l:'Recubrimiento',v:'Oro 18K — 5 micras c/u'},{l:'Dijes',v:'Candado + Llave'},{l:'Cierre',v:'Langosta premium'},{l:'Personalización',v:'Grabado opcional'},{l:'Empaque',v:'Caja corazón especial'}],
+   ratings:[]},
+  {id:'p5',cat:'clasica',catLabel:'Manilla Clásica',name:'Esclava Italiana Fina',icon:'⭕',photo:'',badge:'',price:'$65.000 COP',
+   features:['Cadena italiana 1 mm','Oro laminado 18K — 3 micras','Cierre mariposa','Ligera y discreta, uso diario'],
+   desc:'La elegancia en su expresión más sutil. Perfecta para quienes prefieren accesorios delicados y minimalistas.',
+   specs:[{l:'Material base',v:'Acero inoxidable 316L'},{l:'Recubrimiento',v:'Oro 18K — 3 micras'},{l:'Grosor',v:'1 mm'},{l:'Cierre',v:'Mariposa dorado'},{l:'Longitud',v:'17, 19 y 21 cm'},{l:'Empaque',v:'Bolsa organza dorada'}],
+   ratings:[]},
+  {id:'p6',cat:'moderna',catLabel:'Manilla Moderna',name:'Manilla Cubana Premium',icon:'🔗',photo:'',badge:'Nuevo',price:'$160.000 COP',
+   features:['Eslabón cubano 8 mm','Oro laminado 18K — 6 micras','Cierre caja con seguro','Peso y volumen de joya real'],
+   desc:'El eslabón cubano es el diseño más icónico del streetwear de lujo. 6 micras de oro 18K para un acabado impecable.',
+   specs:[{l:'Material base',v:'Acero inoxidable 316L'},{l:'Recubrimiento',v:'Oro 18K — 6 micras'},{l:'Eslabón',v:'Cubano 8 mm'},{l:'Cierre',v:'Caja con seguro doble'},{l:'Longitud',v:'19 y 21 cm'},{l:'Empaque',v:'Caja rígida premium'}],
+   ratings:[]}
+];
+
+const defaultSiteData = {
+  credentials:{ user:'admin', pass:'goldclub2025' },
+  contact:{ phone:'573000000000', phoneDisplay:'+57 300 000 0000', email:'hola@goldclub.co', city:'Itagüí, Antioquia\nColombia', ig:'#', fb:'#', tk:'#' },
+  texts:{ heroSub:'Manillas, collares y accesorios elaborados a mano con oro laminado de alta calidad', catalogDesc:'Cada pieza es elaborada con capas de oro laminado de alta pureza, garantizando durabilidad y un acabado impecable.', stat1:'500+', stat2:'50+', stat3:'5★', statL1:'Clientes Satisfechos', statL2:'Diseños Únicos', statL3:'Calidad Garantizada', about:'En Goldclub creemos que el lujo debe ser accesible. Usamos las mejores técnicas de laminado para que cada accesorio tenga la elegancia del oro sin el precio del oro macizo.' },
+  products: defaultProducts
+};
+
+function loadData(){
+  try{ const d=JSON.parse(localStorage.getItem(STORAGE_KEY)); if(d&&d.credentials&&d.products) return d; } catch(e){}
+  return JSON.parse(JSON.stringify(defaultSiteData));
+}
+function saveData(d){ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
+
+let siteData = loadData();
+let isLoggedIn = false;
+let currentProduct = null;
+let editingProductId = null;
+let deletingProductId = null;
+let pendingPhotoBase64 = null; // holds new photo while editing
+
+// ══════════════════════════════════════════
+//  STAR HELPERS
+// ══════════════════════════════════════════
+function calcAvg(ratings){
+  if(!ratings||!ratings.length) return null;
+  return ratings.reduce((a,b)=>a+b,0)/ratings.length;
+}
+function starsHTML(avg, size='1rem', total=5){
+  let html='';
+  for(let i=1;i<=total;i++){
+    if(avg>=i) html+=`<span style="color:var(--gold);font-size:${size}">★</span>`;
+    else if(avg>=i-0.5) html+=`<span style="color:var(--gold);font-size:${size};opacity:.6">★</span>`;
+    else html+=`<span style="color:rgba(201,168,76,.2);font-size:${size}">★</span>`;
+  }
+  return html;
+}
+
+// ══════════════════════════════════════════
+//  RENDER SITE
+// ══════════════════════════════════════════
+function renderSite(){
+  const d=siteData;
+  document.getElementById('heroSubtitle').textContent  = d.texts.heroSub;
+  document.getElementById('catalogDesc').textContent   = d.texts.catalogDesc;
+  document.getElementById('stat1').textContent         = d.texts.stat1;
+  document.getElementById('stat2').textContent         = d.texts.stat2;
+  document.getElementById('stat3').textContent         = d.texts.stat3;
+  document.getElementById('statLabel1').textContent    = d.texts.statL1;
+  document.getElementById('statLabel2').textContent    = d.texts.statL2;
+  document.getElementById('statLabel3').textContent    = d.texts.statL3;
+  document.getElementById('aboutText').textContent     = d.texts.about;
+  document.getElementById('displayPhone').textContent  = d.contact.phoneDisplay;
+  document.getElementById('displayEmail').textContent  = d.contact.email;
+  document.getElementById('displayCity').innerHTML     = d.contact.city.replace('\n','<br>');
+  document.getElementById('igLink').href               = d.contact.ig;
+  document.getElementById('fbLink').href               = d.contact.fb;
+  document.getElementById('tkLink').href               = d.contact.tk;
+  document.getElementById('waFloat').href              = 'https://wa.me/'+d.contact.phone;
+  renderCatalog('todas');
+  // update contact form select
+  const sel=document.getElementById('fProducto');
+  sel.innerHTML='<option value="">— Selecciona —</option>';
+  d.products.forEach(p=>{ const o=document.createElement('option'); o.value=p.name; o.textContent=p.name; sel.appendChild(o); });
+}
+
+function renderCatalog(filter){
+  const grid=document.getElementById('productGrid');
+  const products=siteData.products.filter(p=>filter==='todas'||p.cat===filter);
+  grid.innerHTML=products.map(p=>{
+    const avg=calcAvg(p.ratings);
+    const count=p.ratings?p.ratings.length:0;
+    const starsRow = avg!==null
+      ? `<div class="card-stars">
+           <div class="card-stars-display">${starsHTML(avg,'0.85rem')}</div>
+           <span class="card-rating-text">${avg.toFixed(1)} (${count})</span>
+         </div>`
+      : `<div class="card-stars"><span class="card-rating-text" style="padding-left:0">Sin calificaciones aún</span></div>`;
+    const imgTag=p.photo
+      ? `<img src="${p.photo}" alt="${p.name}" loading="lazy"/>`
+      : `<span class="product-image-icon">${p.icon||'💛'}</span>`;
+    return `
+    <div class="product-card" data-cat="${p.cat}" onclick="openModal('${p.id}')">
+      <div class="product-image">
+        ${imgTag}
+        ${p.badge?`<span class="product-badge">${p.badge}</span>`:''}
+      </div>
+      <div class="product-info">
+        <p class="product-category">${p.catLabel}</p>
+        <h3 class="product-name">${p.name}</h3>
+        ${starsRow}
+        <ul class="product-features">${p.features.map(f=>`<li>${f}</li>`).join('')}</ul>
+        <div class="product-footer">
+          <div class="product-price"><span>Precio</span>${p.price}</div>
+          <button class="btn-card">Ver Más</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+//  FILTER
+// ══════════════════════════════════════════
+function filterProducts(cat,btn){
+  document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  renderCatalog(cat);
+}
+
+// ══════════════════════════════════════════
+//  PRODUCT MODAL
+// ══════════════════════════════════════════
+function openModal(id){
+  const p=siteData.products.find(x=>x.id===id);
+  if(!p) return;
+  currentProduct=p;
+  // image
+  const wrap=document.getElementById('modalImageWrap');
+  const icon=document.getElementById('modalImageIcon');
+  // remove existing img if any
+  const existImg=wrap.querySelector('img');
+  if(existImg) existImg.remove();
+  if(p.photo){
+    const img=document.createElement('img');
+    img.src=p.photo; img.alt=p.name;
+    wrap.insertBefore(img, icon);
+    icon.style.display='none';
+  } else {
+    icon.style.display='';
+    icon.textContent=p.icon||'💛';
+  }
+  document.getElementById('modalCat').textContent   = p.catLabel;
+  document.getElementById('modalTitle').textContent = p.name;
+  document.getElementById('modalDesc').textContent  = p.desc;
+  document.getElementById('modalPrice').textContent = p.price;
+  document.getElementById('modalSpecs').innerHTML   = p.specs.map(s=>`<div class="spec-item"><div class="spec-label">${s.l}</div><div class="spec-value">${s.v}</div></div>`).join('');
+  // ratings
+  renderModalRating(p);
+  // interactive stars
+  setupInteractiveStars(p);
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function renderModalRating(p){
+  const avg=calcAvg(p.ratings);
+  const count=p.ratings?p.ratings.length:0;
+  const scoreEl=document.getElementById('modalAvgScore');
+  const starsEl=document.getElementById('modalAvgStars');
+  const votesEl=document.getElementById('modalVotes');
+  if(avg!==null){
+    scoreEl.textContent=avg.toFixed(1);
+    starsEl.innerHTML=starsHTML(avg,'1.1rem');
+    votesEl.textContent=count===1?'1 calificación':`${count} calificaciones`;
+  } else {
+    scoreEl.textContent='—';
+    starsEl.innerHTML=starsHTML(0,'1.1rem');
+    votesEl.textContent='Sin calificaciones aún';
+  }
+}
+
+function setupInteractiveStars(p){
+  const container=document.getElementById('modalIStars');
+  const stars=container.querySelectorAll('.modal-istar');
+  const fb=document.getElementById('rateFeedback');
+  fb.classList.remove('show'); fb.textContent='';
+  // reset visual
+  stars.forEach(s=>{s.classList.remove('selected','hovered');});
+  stars.forEach(star=>{
+    star.onmouseenter=()=>{
+      const v=+star.dataset.v;
+      stars.forEach(s=>{ s.classList.toggle('hovered',+s.dataset.v<=v); });
+    };
+    star.onmouseleave=()=>{ stars.forEach(s=>s.classList.remove('hovered')); };
+    star.onclick=()=>{
+      const v=+star.dataset.v;
+      if(!p.ratings) p.ratings=[];
+      p.ratings.push(v);
+      // persist
+      const idx=siteData.products.findIndex(x=>x.id===p.id);
+      if(idx>=0) siteData.products[idx].ratings=p.ratings;
+      saveData(siteData);
+      renderCatalog(document.querySelector('.filter-pill.active').onclick.toString().match(/'([^']+)'/)?.[1]||'todas');
+      // update modal
+      renderModalRating(p);
+      // visual feedback
+      stars.forEach(s=>{ s.classList.toggle('selected',+s.dataset.v<=v); s.classList.remove('hovered'); });
+      const labels=['','Mala 😞','Regular 😐','Buena 🙂','Muy buena 😊','Excelente ⭐'];
+      fb.textContent='¡Gracias! Calificaste con '+v+' estrella'+(v>1?'s':'')+' — '+labels[v];
+      fb.classList.add('show');
+      // disable further clicks
+      stars.forEach(s=>{ s.onclick=null; s.onmouseenter=null; s.onmouseleave=null; s.style.cursor='default'; });
+    };
+  });
+}
+
+// re-render catalog with current filter when closing
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closeModalOutside(e){ if(e.target.id==='modalOverlay') closeModal(); }
+
+function pedirProducto(){
+  if(!currentProduct) return;
+  const n=siteData.contact.phone;
+  const msg=encodeURIComponent('¡Hola Goldclub! 👋\n\nMe interesa: *'+currentProduct.name+'*\n💰 Precio: '+currentProduct.price+'\n\n¿Está disponible?');
+  window.open('https://wa.me/'+n+'?text='+msg,'_blank');
+}
+
+// ══════════════════════════════════════════
+//  CONTACT FORM
+// ══════════════════════════════════════════
+function sendWhatsApp(){
+  const nombre=document.getElementById('fNombre').value.trim();
+  if(!nombre){ alert('Por favor escribe tu nombre.'); return; }
+  const n=siteData.contact.phone;
+  const tel=document.getElementById('fTel').value.trim();
+  const email=document.getElementById('fEmail').value.trim();
+  const prod=document.getElementById('fProducto').value;
+  const msg=document.getElementById('fMensaje').value.trim();
+  const text=encodeURIComponent('¡Hola Goldclub! 👋\n\n*Nombre:* '+nombre+'\n'+(tel?'*Teléfono:* '+tel+'\n':'')+(email?'*Correo:* '+email+'\n':'')+(prod?'*Producto:* '+prod+'\n':'')+(msg?'\n'+msg:''));
+  document.getElementById('formSuccess').style.display='block';
+  setTimeout(()=>window.open('https://wa.me/'+n+'?text='+text,'_blank'),800);
+}
+
+// ══════════════════════════════════════════
+//  ADMIN LOGIN
+// ══════════════════════════════════════════
+function openLogin(){ document.getElementById('loginOverlay').classList.add('open'); setTimeout(()=>document.getElementById('loginUser').focus(),100); }
+function closeLogin(){ document.getElementById('loginOverlay').classList.remove('open'); document.getElementById('loginError').style.display='none'; }
+function doLogin(){
+  const u=document.getElementById('loginUser').value.trim();
+  const p=document.getElementById('loginPass').value;
+  if(u===siteData.credentials.user && p===siteData.credentials.pass){
+    isLoggedIn=true; closeLogin(); openAdminPanel();
+  } else {
+    document.getElementById('loginError').style.display='block';
+    document.getElementById('loginPass').value='';
+  }
+}
+
+// ══════════════════════════════════════════
+//  ADMIN PANEL
+// ══════════════════════════════════════════
+function openAdminPanel(){
+  document.getElementById('adminDot').classList.add('active');
+  document.getElementById('adminUserLabel').textContent=siteData.credentials.user;
+  document.getElementById('adminPanel').classList.add('open');
+  document.body.style.overflow='hidden';
+  loadAdminForms(); renderAdminProducts();
+}
+function doLogout(){
+  isLoggedIn=false;
+  document.getElementById('adminPanel').classList.remove('open');
+  document.getElementById('adminDot').classList.remove('active');
+  document.body.style.overflow='';
+  showToast('Sesión cerrada');
+}
+function switchTab(name,btn){
+  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.admin-section').forEach(s=>s.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+function loadAdminForms(){
+  const d=siteData;
+  document.getElementById('cfPhone').value        = d.contact.phone;
+  document.getElementById('cfPhoneDisplay').value = d.contact.phoneDisplay;
+  document.getElementById('cfEmail').value        = d.contact.email;
+  document.getElementById('cfCity').value         = d.contact.city;
+  document.getElementById('cfIg').value           = d.contact.ig==='#'?'':d.contact.ig;
+  document.getElementById('cfFb').value           = d.contact.fb==='#'?'':d.contact.fb;
+  document.getElementById('cfTk').value           = d.contact.tk==='#'?'':d.contact.tk;
+  document.getElementById('tfHeroSub').value      = d.texts.heroSub;
+  document.getElementById('tfCatalogDesc').value  = d.texts.catalogDesc;
+  document.getElementById('tfStat1').value        = d.texts.stat1;
+  document.getElementById('tfStat2').value        = d.texts.stat2;
+  document.getElementById('tfStat3').value        = d.texts.stat3;
+  document.getElementById('tfStatL1').value       = d.texts.statL1;
+  document.getElementById('tfStatL2').value       = d.texts.statL2;
+  document.getElementById('tfStatL3').value       = d.texts.statL3;
+  document.getElementById('tfAbout').value        = d.texts.about;
+  document.getElementById('newUser').value        = d.credentials.user;
+}
+function saveContact(){
+  siteData.contact.phone        = document.getElementById('cfPhone').value.trim();
+  siteData.contact.phoneDisplay = document.getElementById('cfPhoneDisplay').value.trim();
+  siteData.contact.email        = document.getElementById('cfEmail').value.trim();
+  siteData.contact.city         = document.getElementById('cfCity').value.trim();
+  siteData.contact.ig           = document.getElementById('cfIg').value.trim()||'#';
+  siteData.contact.fb           = document.getElementById('cfFb').value.trim()||'#';
+  siteData.contact.tk           = document.getElementById('cfTk').value.trim()||'#';
+  saveData(siteData); renderSite();
+  const m=document.getElementById('contactSavedMsg'); m.style.opacity=1; setTimeout(()=>m.style.opacity=0,2500);
+  showToast('✓ Información de contacto guardada');
+}
+function saveTexts(){
+  siteData.texts.heroSub     = document.getElementById('tfHeroSub').value;
+  siteData.texts.catalogDesc = document.getElementById('tfCatalogDesc').value;
+  siteData.texts.stat1       = document.getElementById('tfStat1').value;
+  siteData.texts.stat2       = document.getElementById('tfStat2').value;
+  siteData.texts.stat3       = document.getElementById('tfStat3').value;
+  siteData.texts.statL1      = document.getElementById('tfStatL1').value;
+  siteData.texts.statL2      = document.getElementById('tfStatL2').value;
+  siteData.texts.statL3      = document.getElementById('tfStatL3').value;
+  siteData.texts.about       = document.getElementById('tfAbout').value;
+  saveData(siteData); renderSite();
+  const m=document.getElementById('textsSavedMsg'); m.style.opacity=1; setTimeout(()=>m.style.opacity=0,2500);
+  showToast('✓ Textos actualizados');
+}
+function saveCredentials(){
+  const u=document.getElementById('newUser').value.trim();
+  const p=document.getElementById('newPass').value;
+  const pc=document.getElementById('newPassConfirm').value;
+  if(!u){ showToast('⚠ Escribe un nombre de usuario'); return; }
+  if(p&&p!==pc){ showToast('⚠ Las contraseñas no coinciden'); return; }
+  siteData.credentials.user=u; if(p) siteData.credentials.pass=p;
+  saveData(siteData);
+  document.getElementById('newPass').value=''; document.getElementById('newPassConfirm').value='';
+  document.getElementById('adminUserLabel').textContent=u;
+  const m=document.getElementById('credSavedMsg'); m.style.opacity=1; setTimeout(()=>m.style.opacity=0,2500);
+  showToast('✓ Credenciales actualizadas');
+}
+
+// ══════════════════════════════════════════
+//  ADMIN PRODUCT LIST
+// ══════════════════════════════════════════
+function renderAdminProducts(){
+  const list=document.getElementById('adminProductList');
+  list.innerHTML=siteData.products.map(p=>{
+    const avg=calcAvg(p.ratings);
+    const thumbContent=p.photo
+      ? `<img src="${p.photo}" alt="${p.name}"/>`
+      : (p.icon||'💛');
+    return `
+    <div class="admin-product-row">
+      <div class="admin-row-thumb">${thumbContent}</div>
+      <div class="admin-row-info">
+        <div class="admin-row-name">${p.name}</div>
+        <div class="admin-row-cat">${p.catLabel}</div>
+        ${avg!==null?`<div style="font-size:.6rem;color:var(--gold);margin-top:.2rem">${starsHTML(avg,'0.7rem')} ${avg.toFixed(1)} (${p.ratings.length})</div>`:''}
+      </div>
+      ${p.badge?`<div class="admin-row-badge">${p.badge}</div>`:'<div></div>'}
+      <div class="admin-row-price">${p.price}</div>
+      <div class="admin-row-actions">
+        <button class="admin-edit-btn" onclick="openEditModal('${p.id}')">Editar</button>
+        <button class="admin-delete-btn" onclick="openConfirmDelete('${p.id}')">Eliminar</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+//  PHOTO UPLOAD
+// ══════════════════════════════════════════
+function handlePhotoUpload(event){
+  const file=event.target.files[0];
+  if(!file) return;
+  if(file.size>5*1024*1024){ showToast('⚠ La foto debe pesar menos de 5 MB'); return; }
+  const reader=new FileReader();
+  reader.onload=e=>{
+    pendingPhotoBase64=e.target.result;
+    const preview=document.getElementById('photoPreview');
+    preview.src=pendingPhotoBase64;
+    preview.style.display='block';
+    document.getElementById('photoPlaceholder').style.display='none';
+    document.getElementById('photoRemoveBtn').style.display='inline-block';
+  };
+  reader.readAsDataURL(file);
+}
+function removePhoto(){
+  pendingPhotoBase64='';
+  document.getElementById('photoPreview').style.display='none';
+  document.getElementById('photoPreview').src='';
+  document.getElementById('photoPlaceholder').style.display='block';
+  document.getElementById('photoRemoveBtn').style.display='none';
+  document.getElementById('photoFileInput').value='';
+}
+
+// ══════════════════════════════════════════
+//  EDIT PRODUCT MODAL
+// ══════════════════════════════════════════
+function openEditModal(id){
+  editingProductId=id;
+  pendingPhotoBase64=null;
+  const isNew=!id;
+  document.getElementById('editModalTitle').textContent=isNew?'Nuevo Producto':'Editar Producto';
+  const p=isNew?{cat:'clasica',catLabel:'Manilla Clásica',name:'',icon:'💛',photo:'',badge:'',price:'',features:[],desc:'',specs:[{l:'',v:''}],ratings:[]}:siteData.products.find(x=>x.id===id);
+  // populate fields
+  document.getElementById('eeName').value     = p.name;
+  document.getElementById('eeCat').value      = p.cat;
+  document.getElementById('eePrice').value    = p.price;
+  document.getElementById('eeIcon').value     = p.icon||'💛';
+  document.getElementById('eeBadge').value    = p.badge||'';
+  document.getElementById('eeCatLabel').value = p.catLabel;
+  document.getElementById('eeDesc').value     = p.desc;
+  document.getElementById('eeFeatures').value = p.features.join('\n');
+  // photo
+  const preview=document.getElementById('photoPreview');
+  if(p.photo){
+    pendingPhotoBase64=p.photo;
+    preview.src=p.photo; preview.style.display='block';
+    document.getElementById('photoPlaceholder').style.display='none';
+    document.getElementById('photoRemoveBtn').style.display='inline-block';
+  } else {
+    preview.src=''; preview.style.display='none';
+    document.getElementById('photoPlaceholder').style.display='block';
+    document.getElementById('photoRemoveBtn').style.display='none';
+  }
+  document.getElementById('photoFileInput').value='';
+  // specs
+  const cont=document.getElementById('editSpecsContainer'); cont.innerHTML='';
+  (p.specs||[{l:'',v:''}]).forEach(s=>addSpecRow(s.l,s.v));
+  document.getElementById('editOverlay').classList.add('open');
+}
+function addSpecRow(l='',v=''){
+  const cont=document.getElementById('editSpecsContainer');
+  const row=document.createElement('div'); row.className='edit-spec-row';
+  row.innerHTML=`<input class="edit-input spec-l" placeholder="Nombre (ej: Material)" value="${l}"/><input class="edit-input spec-v" placeholder="Valor (ej: Acero 316L)" value="${v}"/><button class="edit-spec-del" onclick="this.parentElement.remove()">✕</button>`;
+  cont.appendChild(row);
+}
+function closeEditModal(){ document.getElementById('editOverlay').classList.remove('open'); }
+function saveProduct(){
+  const name=document.getElementById('eeName').value.trim();
+  const price=document.getElementById('eePrice').value.trim();
+  if(!name||!price){ showToast('⚠ Nombre y precio son obligatorios'); return; }
+  const specs=[];
+  document.querySelectorAll('#editSpecsContainer .edit-spec-row').forEach(row=>{
+    const l=row.querySelector('.spec-l').value.trim();
+    const v=row.querySelector('.spec-v').value.trim();
+    if(l||v) specs.push({l,v});
+  });
+  const existingRatings = editingProductId ? (siteData.products.find(x=>x.id===editingProductId)||{}).ratings||[] : [];
+  const p={
+    id: editingProductId||('p'+Date.now()),
+    cat: document.getElementById('eeCat').value,
+    catLabel: document.getElementById('eeCatLabel').value.trim(),
+    name, icon: document.getElementById('eeIcon').value.trim()||'💛',
+    photo: pendingPhotoBase64 || '',
+    badge: document.getElementById('eeBadge').value.trim(),
+    price,
+    features: document.getElementById('eeFeatures').value.split('\n').map(s=>s.trim()).filter(Boolean),
+    desc: document.getElementById('eeDesc').value.trim(),
+    specs,
+    ratings: existingRatings
+  };
+  if(editingProductId){
+    const idx=siteData.products.findIndex(x=>x.id===editingProductId);
+    siteData.products[idx]=p;
+  } else { siteData.products.push(p); }
+  saveData(siteData); renderAdminProducts(); renderSite();
+  closeEditModal();
+  showToast(editingProductId?'✓ Producto actualizado':'✓ Producto agregado al catálogo');
+}
+
+// ══════════════════════════════════════════
+//  DELETE
+// ══════════════════════════════════════════
+function openConfirmDelete(id){ deletingProductId=id; document.getElementById('confirmOverlay').classList.add('open'); }
+function closeConfirm(){ document.getElementById('confirmOverlay').classList.remove('open'); deletingProductId=null; }
+function confirmDeleteProduct(){
+  siteData.products=siteData.products.filter(p=>p.id!==deletingProductId);
+  saveData(siteData); renderAdminProducts(); renderSite();
+  closeConfirm(); showToast('✓ Producto eliminado');
+}
+
+// ══════════════════════════════════════════
+//  TOAST
+// ══════════════════════════════════════════
+let toastTimer;
+function showToast(msg){
+  const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),2800);
+}
+
+// ══════════════════════════════════════════
+//  KEYBOARD
+// ══════════════════════════════════════════
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closeModal(); closeLogin();
+    if(document.getElementById('editOverlay').classList.contains('open')) closeEditModal();
+    if(document.getElementById('confirmOverlay').classList.contains('open')) closeConfirm();
+  }
+});
+
+// ══════════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════════
+renderSite();
+</script>
+</body>
+</html>
